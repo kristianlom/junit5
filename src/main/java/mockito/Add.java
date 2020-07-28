@@ -2,7 +2,7 @@ package mockito;
 
 public class Add {
 
-    private ValidNumber validNumber;
+    private final ValidNumber validNumber;
     private Print print;
 
     public Add(ValidNumber validNumber) {

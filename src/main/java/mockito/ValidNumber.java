@@ -25,7 +25,7 @@ public class ValidNumber {
     }
 
     public int doubleTotInt(Object o) {
-        if(o instanceof Double) {
+        if (o instanceof Double) {
             return ((Double) o).intValue();
         } else {
             return 0;

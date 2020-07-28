@@ -22,7 +22,7 @@ class AddCreateMock2Test {
 
     @Test
     void addTest() {
-        add.add(3,2);
+        add.add(3, 2);
         Mockito.verify(validNumber).check(3);
     }
 

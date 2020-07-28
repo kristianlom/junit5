@@ -15,15 +15,16 @@ import static org.mockito.Mockito.*;
 
 class AddTest {
 
+    @Spy
+    List<String> spyList = new ArrayList<>();
+    @Mock
+    List<String> mockList = new ArrayList<>();
     @InjectMocks
     private Add add;
-
     @Mock
     private ValidNumber validNumber;
-
     @Mock
     private Print print;
-
     @Captor
     private ArgumentCaptor<Integer> captor;
 
@@ -52,6 +53,14 @@ class AddTest {
         assertNotNull(exception);
     }
 
+    //Arrange
+    //Act
+    //Assert
+
+    //Given
+    //When
+    //Then
+
     @Test
     void addRealMethodTest() {
         when(validNumber.check(3)).thenCallRealMethod();
@@ -68,14 +77,6 @@ class AddTest {
         when(validNumber.doubleTotInt(7.7)).thenAnswer(answer);
         assertEquals(14, add.addInt(7.7));
     }
-
-    //Arrange
-    //Act
-    //Assert
-
-    //Given
-    //When
-    //Then
 
     @Test
     void patterTest() {
@@ -133,12 +134,6 @@ class AddTest {
         assertEquals(captor.getValue().intValue(), 9);
     }
 
-    @Spy
-    List<String> spyList = new ArrayList<>();
-
-    @Mock
-    List<String> mockList = new ArrayList<>();
-
     @Test
     void spyTest() {
         spyList.add("1");
@@ -148,6 +143,7 @@ class AddTest {
         assertEquals(2, spyList.size());
 
     }
+
     @Test
     void mockTest() {
         mockList.add("1");

@@ -3,8 +3,6 @@ package mockito;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
-import org.mockito.invocation.InvocationOnMock;
-import org.mockito.stubbing.Answer;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -33,9 +31,9 @@ class LoginTest {
         doAnswer(invocationOnMock -> {
 
             String user = (String) invocationOnMock.getArguments()[0];
-            assertEquals("kristian",user);
+            assertEquals("kristian", user);
             String password = (String) invocationOnMock.getArguments()[1];
-            assertEquals("lopez",password);
+            assertEquals("lopez", password);
             Callback callback = (Callback) invocationOnMock.getArguments()[2];
             callback.onSuccess("OK");
             return null;
@@ -52,9 +50,9 @@ class LoginTest {
         doAnswer(invocationOnMock -> {
 
             String user = (String) invocationOnMock.getArguments()[0];
-            assertEquals("kristian",user);
+            assertEquals("kristian", user);
             String password = (String) invocationOnMock.getArguments()[1];
-            assertEquals("lopez",password);
+            assertEquals("lopez", password);
             Callback callback = (Callback) invocationOnMock.getArguments()[2];
             callback.onFail("Error");
             return null;
@@ -68,7 +66,7 @@ class LoginTest {
     @Test
     void doLoginCaptorTest() {
         login.doLogin();
-        verify(webService, times(1)).login(anyString(),anyString(),callbackArgumentCaptor.capture());
+        verify(webService, times(1)).login(anyString(), anyString(), callbackArgumentCaptor.capture());
         assertFalse(login.isLogin);
 
         Callback callback = callbackArgumentCaptor.getValue();

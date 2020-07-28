@@ -52,12 +52,12 @@ class ValidNumberTest {
 
     @Test
     void doubleToIntTest() {
-        assertEquals(9,validNumber.doubleTotInt(9.999));
+        assertEquals(9, validNumber.doubleTotInt(9.999));
     }
 
     @Test
     void doubleToIntErrorTest() {
-        assertEquals(0,validNumber.doubleTotInt("9.999"));
+        assertEquals(0, validNumber.doubleTotInt("9.999"));
     }
 
 }

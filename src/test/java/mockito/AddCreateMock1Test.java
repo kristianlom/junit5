@@ -4,8 +4,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 class AddCreateMock1Test {
 
     private Add add;
@@ -20,7 +18,7 @@ class AddCreateMock1Test {
 
     @Test
     void addTest() {
-        add.add(3,2);
+        add.add(3, 2);
         Mockito.verify(validNumber).check(3);
         Mockito.verify(validNumber).check(5);
 
